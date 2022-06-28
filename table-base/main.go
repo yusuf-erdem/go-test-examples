@@ -18,6 +18,11 @@ func sum() {
 	return
 }
 
+func multiply() {
+	fmt.Println("multiply")
+	return
+}
+
 func main() {
 	fmt.Println(reverse("hola"))
 }
