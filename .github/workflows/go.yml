@@ -22,7 +22,7 @@ jobs:
       with:
         go-version: 1.17
     - name: Test
-      run: go test  ./... -coverprofile=coverage.out
+      run: go test  ./... -coverprofile=./cov/coverage.out
     - name: Thundra Registry
       if: success() || failure()
       run: |
@@ -36,6 +36,6 @@ jobs:
         api_key: ${{ secrets.THUNDRA_APIKEY }}
         coverage_format: golang
         coverage_path: |
-          coverage.out
+          **/cov/**
         cli_version: 213.3.12
 
