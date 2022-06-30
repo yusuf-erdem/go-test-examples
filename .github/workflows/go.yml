@@ -24,15 +24,17 @@ jobs:
     - name: Test
       run: go test  ./... -coverprofile=coverage.out
     - name: Thundra Registry
+      if: success() || failure()
       run: |
         npm config set registry ${{ secrets.THUNDRA_REGISTRY }}
         npm config set _auth ${{ secrets.THUNDRA_REGISTRY_AUTH }}
-        - name: Foresight Action
-          uses: thundra-io/foresight-test-kit-action@initial-action
-          with:
-            api_key: ${{ secrets.THUNDRA_APIKEY }}
-            coverage_format: golang
-            coverage_path: |
-              coverage.out
-            cli_version: 213.3.12
+    - name: Foresight Action
+      if: success() || failure()
+      uses: thundra-io/foresight-test-kit-action@initial-action
+      with:
+        api_key: ${{ secrets.THUNDRA_APIKEY }}
+        coverage_format: golang
+        coverage_path: |
+          coverage.out
+        cli_version: 213.3.12
 
