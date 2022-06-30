@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"testing"
+	"time"
 )
 
 func TestNew(t *testing.T) {
@@ -16,4 +17,13 @@ func TestNew(t *testing.T) {
 			t.Errorf("Trace should not write '%s'.", buf.String())
 		}
 	}
+}
+
+func TestSkip(t *testing.T) {
+	t.Skip("deneme")
+}
+func TestError(t *testing.T) {
+	time.Sleep(1)
+	t.Fatalf("denme")
+
 }

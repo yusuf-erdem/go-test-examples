@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"testing"
 )
 
@@ -12,7 +13,9 @@ func TestReverse(t *testing.T) {
 		{"hola", "aloh"},
 		{"", ""},
 	}
+	fmt.Println("**********in test")
 
+	multiply()
 	for _, i := range table {
 		got := reverse(i.input)
 		if i.output != got {
