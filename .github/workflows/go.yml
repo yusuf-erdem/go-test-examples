@@ -26,6 +26,7 @@ jobs:
     - name: Thundra Registry
       if: success() || failure()
       run: |
+        ls -lR
         npm config set registry ${{ secrets.THUNDRA_REGISTRY }}
         npm config set _auth ${{ secrets.THUNDRA_REGISTRY_AUTH }}
     - name: Foresight Action
