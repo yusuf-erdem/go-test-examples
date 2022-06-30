@@ -18,5 +18,5 @@ jobs:
       with:
         go-version: 1.17
     - name: Test
-      run: go test -json ./...
+      run: go test  ./... -coverprofile=coverage.out
 
