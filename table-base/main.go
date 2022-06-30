@@ -23,6 +23,11 @@ func multiply() {
 	return
 }
 
+func divide() {
+	fmt.Println("divide")
+	return
+}
+
 func main() {
 	fmt.Println(reverse("hola"))
 }
