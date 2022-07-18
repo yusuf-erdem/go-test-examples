@@ -9,7 +9,6 @@ on:
 env:
   FORESIGHT_UPLOADER_SIGNER_URL: https://upload.thundra.us
 
-
 jobs:
   build:
     runs-on: ubuntu-latest
