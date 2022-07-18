@@ -37,5 +37,5 @@ jobs:
         coverage_format: golang
         coverage_path: |
           **/cov/**
-        cli_version: 213.3.12
+        cli_version: 213.3.16
 
