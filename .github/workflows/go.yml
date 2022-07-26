@@ -36,7 +36,7 @@ jobs:
         api_key: ${{ secrets.THUNDRA_APIKEY }}
         test_framework: golang
         test_format: txt
-        test_path: out.txt
+        test_path: ./out.txt
         coverage_format: golang
         coverage_path: |
           **/cov/**
