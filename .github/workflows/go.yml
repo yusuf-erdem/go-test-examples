@@ -21,7 +21,8 @@ jobs:
     - name: Test
       run: |
         mkdir cov
-        go test -v > out.txt ./... -coverprofile=cov/coverage.out
+        mkdir test
+        go test -v > test/out.txt ./... -coverprofile=cov/coverage.out
         ls -lR
     - name: Thundra Registry
       if: success() || failure()
@@ -36,7 +37,8 @@ jobs:
         api_key: ${{ secrets.THUNDRA_APIKEY }}
         test_framework: golang
         test_format: txt
-        test_path: ./out.txt
+        test_path: |
+          **/test/**
         coverage_format: golang
         coverage_path: |
           **/cov/**
