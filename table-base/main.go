@@ -1,8 +1,10 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"strings"
+	"time"
 )
 
 func reverse(tx string) (out string) {
@@ -30,4 +32,19 @@ func divide() {
 
 func main() {
 	fmt.Println(reverse("hola"))
+}
+
+var ErrNotEven = errors.New("not an even number")
+
+func EvenOrSleep(n int) error {
+	if n%2 == 0 {
+		fmt.Println("****  even ")
+		fmt.Println(n)
+
+		time.Sleep(time.Duration(n) * time.Second)
+		return nil
+	}
+	fmt.Println("not even")
+
+	return ErrNotEven
 }

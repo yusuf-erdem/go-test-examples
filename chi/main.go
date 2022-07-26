@@ -9,7 +9,7 @@
 //
 // Boot the server:
 // ----------------
-// $ go run main.go
+// $ go run ddd.go
 //
 // Client requests:
 // ----------------
