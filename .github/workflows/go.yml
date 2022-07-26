@@ -19,7 +19,8 @@ jobs:
     - name: Test
       run: |
         mkdir cov
-        go test  ./... -coverprofile=cov/coverage.out
+        go test -v > out.txt ./... -coverprofile=cov/coverage.out
+        ls -lR
     - name: Thundra Registry
       if: success() || failure()
       run: |
@@ -28,11 +29,14 @@ jobs:
         npm config set _auth ${{ secrets.THUNDRA_REGISTRY_AUTH }}
     - name: Foresight Action
       if: success() || failure()
-      uses: thundra-io/foresight-test-kit-action@master
+      uses: thundra-io/foresight-test-kit-action@v1.0.0
       with:
         api_key: ${{ secrets.THUNDRA_APIKEY }}
+        test_framework: golang
+        test_format: txt
+        test_path: out.txt
         coverage_format: golang
         coverage_path: |
           **/cov/**
-        cli_version: 213.3.16
+        cli_version: 123.321.1
 
