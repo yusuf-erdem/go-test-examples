@@ -23,6 +23,7 @@ jobs:
       run: |
         mkdir cov
         mkdir test
+        go clean -testcache 
         go test -v -json > test/out.json ./... -coverprofile=cov/coverage.out
         cat test/out.txt
     - name: Thundra Registry
