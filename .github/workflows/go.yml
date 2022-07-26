@@ -23,7 +23,7 @@ jobs:
         mkdir cov
         mkdir test
         go test -v > test/out.txt -coverprofile=cov/coverage.out
-        ls -lR
+        cat test/out.txt
     - name: Thundra Registry
       if: success() || failure()
       run: |
