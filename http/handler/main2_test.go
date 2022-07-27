@@ -7,7 +7,7 @@ import (
 	"testing"
 )
 
-func TestName2Handler(t *testing.T) {
+func TestPepeHandler(t *testing.T) {
 
 	req, err := http.NewRequest("GET", "http://localhost:9090/name/pepe", nil)
 	if err != nil {

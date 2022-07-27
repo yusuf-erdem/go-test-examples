@@ -20,10 +20,10 @@ func TestNew(t *testing.T) {
 }
 
 func TestSkip(t *testing.T) {
-	t.Skip("deneme")
+	t.Skip("Skip log")
 }
 func TestError(t *testing.T) {
-	time.Sleep(1)
-	t.Fatalf("denme")
+	time.Sleep(time.Duration(750) * time.Millisecond)
+	t.Fatalf("Error Log")
 
 }

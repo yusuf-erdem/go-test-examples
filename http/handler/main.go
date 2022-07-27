@@ -17,7 +17,7 @@ func main() {
 
 // nameHandler receives a name in the path and says Hi to that name
 func nameHandler(w http.ResponseWriter, r *http.Request) {
-	time.Sleep(time.Duration(1) * time.Millisecond)
+	time.Sleep(time.Duration(100) * time.Millisecond)
 	args := strings.Split(r.URL.Path, "/")
 	name := args[2]
 	fmt.Fprintf(w, "Hi %s", name)

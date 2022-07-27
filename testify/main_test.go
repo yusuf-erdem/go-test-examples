@@ -3,6 +3,7 @@ package main
 import (
 	"strconv"
 	"testing"
+	"time"
 
 	"github.com/stretchr/testify/assert"
 )
@@ -12,6 +13,7 @@ func TestFacto(t *testing.T) {
 	t2 := facto(5)
 	assert.Equal(t, t1, t2, "they should be equal")
 
+	time.Sleep(time.Duration(500) * time.Millisecond)
 	f := facto(-1)
 	assert.Equal(t, 0, f, "factorial of -1 should be 0")
 }
