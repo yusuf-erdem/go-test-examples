@@ -9,7 +9,6 @@ on:
 env:
   FORESIGHT_UPLOADER_SIGNER_URL: https://upload.thundra.me
   
-  
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,7 +23,7 @@ jobs:
         mkdir cov
         mkdir test
         go clean -testcache 
-        go test -v -json > test/out.json ./... -coverprofile=cov/coverage.out
+        go test -v > test/out.txt ./... -coverprofile=cov/coverage.out
         cat test/out.txt
     - name: Thundra Registry
       if: success() || failure()
@@ -34,14 +33,13 @@ jobs:
         npm config set _auth ${{ secrets.THUNDRA_REGISTRY_AUTH }}
     - name: Foresight Action
       if: success() || failure()
-      uses: runforesight/foresight-test-kit-action@build-runforesight
+      uses: runforesight/foresight-test-kit-action@v1
       with:
         api_key: ${{ secrets.THUNDRA_APIKEY }}
         test_framework: golang
-        test_format: json
-        test_path: test/out.json
+        test_format: text
+        test_path: test/out.txt
         coverage_format: golang
         coverage_path: |
           **/cov/**
-        cli_version: 123.321.2
 
