@@ -1,4 +1,4 @@
-name: Go
+name: Cov-Test
 
 on:
   push:
