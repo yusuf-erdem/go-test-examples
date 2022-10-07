@@ -4,6 +4,7 @@ on:
   push:
     branches: [ "master" ]
   pull_request:
+    branches: [ "master" ]
   workflow_dispatch:
 env:
   FORESIGHT_UPLOADER_SIGNER_URL: https://upload.service.runforesight.me
