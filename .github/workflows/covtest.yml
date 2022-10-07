@@ -7,7 +7,6 @@ on:
   workflow_dispatch:
 env:
   FORESIGHT_UPLOADER_SIGNER_URL: https://upload.service.runforesight.me
-
 jobs:
   build-cov-test:
     runs-on: ubuntu-latest
