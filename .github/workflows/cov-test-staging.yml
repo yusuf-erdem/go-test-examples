@@ -34,7 +34,7 @@ jobs:
         if: success() || failure()
         uses: runforesight/foresight-test-kit-action@v1
         with:
-          api_key: ${{ secrets.FORESİGHT_STAGING_APIKEY }}
+          api_key: ${{ secrets.FORESIGHT_STAGING_APIKEY }}
           test_framework: golang
           test_format: text
           test_path: test/out.txt
