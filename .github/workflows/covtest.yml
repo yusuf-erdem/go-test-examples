@@ -4,8 +4,6 @@ on:
   push:
   pull_request:
   workflow_dispatch:
-env:
-  FORESIGHT_UPLOADER_SIGNER_URL: https://upload.service.runforesight.me
 jobs:
   build-cov-test:
     runs-on: ubuntu-latest
@@ -32,7 +30,7 @@ jobs:
       if: success() || failure()
       uses: runforesight/foresight-test-kit-action@v1
       with:
-        api_key: ${{ secrets.THUNDRA_APIKEY }}
+        api_key: ${{ secrets.FORESIGHT_PRO_KEY }}
         test_framework: golang
         test_format: text
         test_path: test/out.txt
