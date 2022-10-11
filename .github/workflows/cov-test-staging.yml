@@ -1,6 +1,5 @@
 name: Cov-Test-Staging
 
-
 on:
   push:
   pull_request:
